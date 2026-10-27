@@ -3,7 +3,7 @@
 import React, { useState, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { BrandLogo } from '@/components/BrandLogo';
-import { ShieldCheck, Lock, Mail, ArrowLeft, AlertCircle, CheckCircle, Sparkles } from 'lucide-react';
+import { ShieldCheck, Lock, Mail, ArrowLeft, AlertCircle } from 'lucide-react';
 import Link from 'next/link';
 
 function LoginForm() {
@@ -44,11 +44,6 @@ function LoginForm() {
     }
   };
 
-  const handleFillDemo = (demoEmail: string, demoPass: string) => {
-    setEmail(demoEmail);
-    setPassword(demoPass);
-    setError(null);
-  };
 
   return (
     <div className="w-full max-w-md bg-white border border-neutral-200 rounded-2xl p-6 sm:p-8 shadow-xl space-y-6">
@@ -119,34 +114,6 @@ function LoginForm() {
         </button>
       </form>
 
-      {/* Credenciales configuradas para acceso rápido */}
-      <div className="pt-4 border-t border-neutral-100 space-y-2.5">
-        <span className="text-[10px] font-bold uppercase tracking-wider text-neutral-400 block text-center">
-          Credenciales Iniciales Preconfiguradas:
-        </span>
-        <div className="grid grid-cols-1 gap-1.5 text-xs">
-          <button
-            type="button"
-            onClick={() => handleFillDemo('admin@eclipsestore.pe', 'admin123')}
-            className="p-2 bg-neutral-50 hover:bg-neutral-100 border border-neutral-200 rounded-lg text-left flex items-center justify-between text-neutral-700 hover:text-black transition"
-          >
-            <div>
-              <b className="text-black">Administrador:</b> admin@eclipsestore.pe
-            </div>
-            <span className="text-[10px] bg-neutral-200 px-1.5 py-0.5 rounded font-mono">admin123</span>
-          </button>
-          <button
-            type="button"
-            onClick={() => handleFillDemo('carlos@eclipsestore.pe', 'carlos123')}
-            className="p-2 bg-neutral-50 hover:bg-neutral-100 border border-neutral-200 rounded-lg text-left flex items-center justify-between text-neutral-700 hover:text-black transition"
-          >
-            <div>
-              <b className="text-black">Vendedor Carlos:</b> carlos@eclipsestore.pe
-            </div>
-            <span className="text-[10px] bg-neutral-200 px-1.5 py-0.5 rounded font-mono">carlos123</span>
-          </button>
-        </div>
-      </div>
 
       <div className="text-center pt-2">
         <Link
